@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#79d6e1</color>
+    <color name="colorPrimaryDark">#aee1e2</color>
+    <color name="colorAccent">#a5f2f0</color>
+
+    <color name="bluebackground">#9999FF</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="twitter_vitrified_blue">#1dcaff</color>
+    <color name="twitter_dark_blue">#0084b4</color>
+    <color name="twitter_logo_blue">#00aced</color>
+    <color name="twitter_retweet">#32B32e</color>
+</resources>
