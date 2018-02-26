@@ -348,7 +348,7 @@ tweet.type=0;
         this.screenName=in.readString();
         this.profileImageUrl=in.readString();
         this.imTweet=in.readString();
-this.type=in.readInt();
+        this.type=in.readInt();
         this.retweeted = in.readByte() != 0;
         this.favorited = in.readByte() != 0;
 

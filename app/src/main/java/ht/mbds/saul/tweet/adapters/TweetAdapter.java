@@ -44,6 +44,7 @@ public class TweetAdapter  extends  RecyclerView.Adapter<RecyclerView.ViewHolder
     ImageView imProfile;
     private final int WITH_IMAGE = 0,WITH_VIDEO=1, WITHOUT_IMAGE = 2;
 
+
     public TweetAdapter(Context context, List<Tweet> tweets) {
         this.context = context;
         this.tweets = tweets;
@@ -55,6 +56,7 @@ public class TweetAdapter  extends  RecyclerView.Adapter<RecyclerView.ViewHolder
     public Context getContext() {
         return context;
     }
+
     public void setClicklistener(OnItemClickListenerInterface clicklistener) {
         this.clicklistener = clicklistener;
     }

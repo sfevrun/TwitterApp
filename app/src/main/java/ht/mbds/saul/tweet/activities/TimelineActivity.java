@@ -1,6 +1,9 @@
 package ht.mbds.saul.tweet.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.preference.PreferenceActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +24,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import ht.mbds.saul.tweet.R;
+import ht.mbds.saul.tweet.Utils.ItemClickRecycle;
 import ht.mbds.saul.tweet.adapters.TweetAdapter;
 import ht.mbds.saul.tweet.models.Tweet;
 import ht.mbds.saul.tweet.serviceApi.EndlessRecyclerViewScrollListener;
@@ -31,6 +35,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -100,6 +105,24 @@ public class TimelineActivity extends AppCompatActivity implements MessageDialog
                 populate(0);
             }
         });
+
+
+        ItemClickRecycle.addTo(rvTweet).setOnItemClickListener(new ItemClickRecycle.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+              //  Intent detail = new Intent(TimelineActivity.this,DetailTweetActivity.class);
+              //  startActivity(detail);
+                Tweet twt = tweets.get(position);
+                Intent intent = new Intent(TimelineActivity.this, DetailTweetActivity.class);
+                intent.putExtra("tweet", Parcels.wrap(twt));
+              //  intent.putExtra("tweet", twt);
+                 startActivity(intent);
+                //     Toast.makeText(getApplicationContext(),"You have selected pst3", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+
 
     }
     public  void populate(int page){

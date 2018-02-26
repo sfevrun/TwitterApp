@@ -32,8 +32,21 @@
                     android:scheme="@string/intent_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TimelineActivity"></activity>
-        <activity android:name=".activities.DetailTweetActivity"></activity>
+        <activity android:name=".activities.TimelineActivity">
+
+        </activity>
+
+
+        <activity
+            android:name=".activities.DetailTweetActivity"
+
+            android:parentActivityName=".activities.TimelineActivity"
+            >
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.DetailTweetActivity" />
+        </activity>
     </application>
 
 </manifest>
